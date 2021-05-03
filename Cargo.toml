@@ -1,0 +1,20 @@
+[package]
+name = "koru-api"
+version = "0.0.1"
+authors = ["a-n-t-i-b-a-r-y-o-n"]
+edition = "2018"
+
+[features]
+default = ["rest"]
+full = ["rest", "mqtt"]
+rest = []
+mqtt = []
+
+[dependencies]
+koru = { path = "../koru" }
+serde_json = "1.0.64"
+quick-xml = "0.22.0"
+semver-binary = "0.1.0"
+sqlx = { version = "0.5", features = [ "runtime-tokio-native-tls", "sqlite", "macros", "time", "tls" ] }
+tokio = { version = "1", features = ["full"] }
+warp = "0.3"
